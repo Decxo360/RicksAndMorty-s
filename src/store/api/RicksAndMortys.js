@@ -1,6 +1,4 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query'
-
-
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const ricksAndMortysApi = createApi({
     reducerPath: 'ricksAndmortys',
@@ -9,14 +7,14 @@ export const ricksAndMortysApi = createApi({
     }),
     endpoints: (builder) => ({
         getCharacters: builder.query({
-            query:()=>'/character'
+            query: () =>'/character'
         }),
         getRicksAndMortys: builder.query({
             query: (page) => `/character/?page=${page}`
         }),
         getCharacterByName: builder.query({
             query: (name) => `/character/?name=${name}`
-        })
+        }),
     })
 })
-export const {useGetCharacters,useGetRickAndMortysQuery, useGetCharacterByNameQuery} = ricksAndMortysApi
+export const {useGetCharactersQuery,useGetRicksAndMortysQuery, useGetCharacterByNameQuery} = ricksAndMortysApi;
