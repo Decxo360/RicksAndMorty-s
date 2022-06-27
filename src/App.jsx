@@ -6,6 +6,7 @@ import { CharacterContent } from './components/CharacterContent'
 import { increment, decrement, reset } from './store/slices/counter/CounterSlice'
 import { useGetCharactersQuery, useGetRicksAndMortysQuery } from './store/api/RicksAndMortys'
 import { useState } from 'react'
+import { SearchComponent } from './components/SearchComponent'
 
 export const App = () => {
 
@@ -36,6 +37,8 @@ export const App = () => {
         <button className='btn btn-outline-primary' onClick={reset}>Resetear</button>
         <button className='btn btn-outline-primary' onClick={Next} style={{ right: '0px' }}>Siguiente</button>
       </div>
+        <SearchComponent/>
+
       <div className='d-flex flex-wrap'>
         {!isLoading 
         ? 
