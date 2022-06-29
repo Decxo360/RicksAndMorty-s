@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { useForm } from "../hooks/useForm"
-import { useGetCharacterByNameQuery } from "../store/api/RicksAndMortys";
-import { CharacterContent } from "./CharacterContent";
+import { useForm } from "../../hooks/useForm"
+import { useGetCharacterByNameQuery } from "../../store/api/RicksAndMortys";
+import { CharacterContent } from "../CharacterContent";
 
 
 export const SearchComponent = () => {
-    const [search, setSearch] = useState('')
+    const [search, setSearch] = useState('a')
     const [{ busqueda }, handleInputChange, reset] = useForm({ busqueda: '' })
     const { data = [], isLoading } = useGetCharacterByNameQuery(search)
     const onAddSearch = (e) => {
@@ -46,7 +46,7 @@ export const SearchComponent = () => {
                 ? <h1 className="d-flex justify-content-center" style={{color:'white'}}>Cargando...</h1>
                 :
                 <div>
-                    <h3 className="d-flex justify-content-center" style={{color:'white'}}>{search !== '' ? `Su busqueda fue: ${busqueda}` : '' }</h3>
+                    <h3 className="d-flex justify-content-center" style={{color:'white'}}>{search !== '' ? `Su busqueda fue: ${search}` : '' }</h3>
                     <div className={`d-flex flex-wrap ${data.results.length < 3 ? 'justify-content-center' : '' }`}>
                         {data.results.map(result => (
                             <CharacterContent
@@ -56,6 +56,7 @@ export const SearchComponent = () => {
                                 species={result.species}
                                 gender={result.gender}
                                 status={result.status}
+                                id={result.id}
                             />))}
                     </div>
                 </div>

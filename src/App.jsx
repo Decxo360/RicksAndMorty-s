@@ -1,17 +1,10 @@
 import './App.css'
 
-
-import { useDispatch, useSelector } from 'react-redux'
 import { CharacterContent } from './components/CharacterContent'
-import { increment, decrement, reset } from './store/slices/counter/CounterSlice'
-import { useGetCharactersQuery, useGetRicksAndMortysQuery } from './store/api/RicksAndMortys'
+import {useGetRicksAndMortysQuery } from './store/api/RicksAndMortys'
 import { useState } from 'react'
-import { SearchComponent } from './components/SearchComponent'
 
 export const App = () => {
-
-  const counter = useSelector(state => state.counter)
-  const dispatch = useDispatch();
 
   const [character,setCharacter] = useState(1)
 
@@ -34,10 +27,10 @@ export const App = () => {
       <img src='./src/logo.png' className='img-fluid' alt='algoctm' style={{ width: '25%', marginLeft: '39%' }} />
       <div className='d-flex justify-content-between' style={{ marginTop: '20px' }}>
         <button className='btn btn-outline-primary' disabled={character === 1 ? true : false} onClick={Previus}>Anterior</button>
-        <button className='btn btn-outline-primary' onClick={reset}>Resetear</button>
+        <button className='btn btn-outline-primary' onClick={reset}>Ir al incio</button>
         <button className='btn btn-outline-primary' onClick={Next} style={{ right: '0px' }}>Siguiente</button>
       </div>
-        <SearchComponent/>
+        
 
       <div className='d-flex flex-wrap'>
         {!isLoading 
@@ -50,6 +43,7 @@ export const App = () => {
             species={result.species}
             gender={result.gender}
             status={result.status}
+            id={result.id}
           />
         ))
         : 

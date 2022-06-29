@@ -15,6 +15,9 @@ export const ricksAndMortysApi = createApi({
         getCharacterByName: builder.query({
             query: (name) => `/character/?name=${name}`
         }),
+        getCharacterById: builder.query({
+            query: (id) => `/character/${id}`
+        }),
     })
 })
-export const {useGetCharactersQuery,useGetRicksAndMortysQuery, useGetCharacterByNameQuery} = ricksAndMortysApi;
+export const {useGetCharactersQuery,useGetRicksAndMortysQuery, useGetCharacterByNameQuery, useGetCharacterByIdQuery} = ricksAndMortysApi;
