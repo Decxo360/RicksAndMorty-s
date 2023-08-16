@@ -15,8 +15,9 @@ export const CharacterContent = ({ img, name, status, species, gender, id }) => 
         style={{ 
           marginTop: '20px', 
           border: '1px solid #424242', 
-          width: '200px', borderRadius: 
-          '5px', marginLeft: '100px', 
+          width: '200px',
+          borderRadius: '5px',
+          marginLeft: '135px', 
           order: '4' 
           }}>
       <div style={{ marginLeft: '22px', marginTop: '10px' }}>
