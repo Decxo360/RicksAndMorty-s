@@ -7,11 +7,7 @@ import { CharacterContent } from "../CharacterContent";
 export const SearchComponent = () => {
     const [search, setSearch] = useState('')
     const [{ busqueda }, handleInputChange, reset] = useForm({ busqueda: '' })
-    const { data = [], isLoading } = useGetCharacterByNameQuery(search)
-    const onAddSearch = (e) => {
-        e.preventDefault();
-        setSearch(busqueda);
-    }
+    const { data = [], isLoading } = useGetCharacterByNameQuery(busqueda)
     return (
         <div>
             <div className="d-flex flex-row justify-content-center items-center "style={{width:"100%"}}>
