@@ -5,7 +5,7 @@ import { CharacterContent } from "../CharacterContent";
 
 
 export const SearchComponent = () => {
-    const [search, setSearch] = useState('a')
+    const [search, setSearch] = useState('')
     const [{ busqueda }, handleInputChange, reset] = useForm({ busqueda: '' })
     const { data = [], isLoading } = useGetCharacterByNameQuery(search)
     const onAddSearch = (e) => {
@@ -14,8 +14,8 @@ export const SearchComponent = () => {
     }
     return (
         <div>
-            <div className="d-flex flex-row justify-content-center items-center">
-                <form>
+            <div className="d-flex flex-row justify-content-center items-center "style={{width:"100%"}}>
+                <form style={{width:"100%"}} className="d-flex flex-row justify-content-center">
                     <input
                         type="text"
                         placeholder="  ej: Rick Sanchez"
@@ -23,24 +23,15 @@ export const SearchComponent = () => {
                         value={busqueda}
                         onChange={handleInputChange}
                         style={{
-                            height: '40px',
-                            borderRadius: '5px 0px 0px 5px',
+                            height: '50px',
+                            borderRadius: '5px 5px 5px 5px',
                             border: '1px solid white',
-                            backgroundColor: '#000000',
-                            color: "white",
-                            borderRight: 'none'
+                            backgroundColor: "white",
+                            textAlign:"center",
+                            color: "black",
+                            width:"25%"
                         }} />
                 </form>
-                <button type="button" style={{
-                    borderRadius: '0px 5px 5px 0px',
-                    border: '1px solid white',
-                    borderLeft: 'none',
-                    height: '40px',
-                    marginTop: '0px',
-                    backgroundColor: '#000000',
-                    color: 'white'
-                }}
-                    onClick={onAddSearch}>Buscar</button>
             </div>
             {isLoading
                 ? <h1 className="d-flex justify-content-center" style={{color:'white'}}>Cargando...</h1>
