@@ -14,7 +14,7 @@ export const SearchComponent = () => {
     }
     return (
         <div>
-            <div className="d-flex flex-row justify-content-center mt-3">
+            <div className="d-flex flex-row justify-content-center items-center">
                 <form>
                     <input
                         type="text"
