@@ -11,7 +11,7 @@ export const DetailsScreen = () => {
                 className='d-flex flex-row justify-content-between'
                 style={{
                     border:'2px solid wheat',
-                    borderTop:'none'
+
                 }}
             >
                 <img
@@ -39,14 +39,13 @@ export const DetailsScreen = () => {
                 </div>
             </div>
             <div className='d-flex flex-row mt-3 ms-3 justify-content-center'>
-                <div className='d-flex flex-column'>
+                <div className='d-flex flex-column justify-content-around'>
                     <h3>Episodios en los que aparece</h3>
-                    <ul>
-                        {data.episode?.map((ep,index)=>(
-                            <li key={index}>{ep}</li>
-                        ))}
-                    </ul>
-                    
+                        <ul>
+                            {data.episode?.map((ep,index)=>(
+                                <li key={index}>{ep}</li>
+                            ))}
+                        </ul>
                 </div>
                 <h4 className='ms-4 mt-2'>Este personaje ha sido creado el: <br></br>{data.created}</h4>
             </div>

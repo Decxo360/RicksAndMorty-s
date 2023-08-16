@@ -1,6 +1,7 @@
 import './App.css'
 
 import { CharacterContent } from './components/CharacterContent'
+import { Footer } from './components/ui/Footer'
 import {useGetRicksAndMortysQuery } from './store/api/RicksAndMortys'
 import { useState } from 'react'
 
@@ -47,6 +48,7 @@ export const App = () => {
         <button className='btn btn-outline-primary' onClick={reset}>Ir al incio</button>
         <button className='btn btn-outline-primary' onClick={Next} style={{ right: '0px' }}>Siguiente</button>
       </div>
+      <Footer/>
     </div>
   )
 }

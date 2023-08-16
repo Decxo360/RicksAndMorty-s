@@ -14,7 +14,7 @@ export const AppRouter = () => {
                 <Route path={'/search'} element={<SearchScreen/>}/>
                 <Route path={'/details/:name/:id'} element={<DetailsScreen/>}/>
             </Routes>
-          <Footer/>
+          {/* <Footer/> */}
         </BrowserRouter>
   )
 }
